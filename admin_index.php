@@ -70,7 +70,8 @@
 												<tbody>
 													<?php
 														$showdata = mysqli_query($con, "SELECT * FROM radcheck, member WHERE radcheck.username = member.username AND attribute != 'Cleartext-Password' AND radcheck.username!='$username'");
-														while ($show = mysqli_fetch_assoc($showdata)) { ?>
+														while ($show = mysqli_fetch_assoc($showdata)) {
+														$show_username = $show['username']; ?>
 															<tr>
 																<td><?php echo $show['id']; ?></td>
 																<td><?php echo $show['username']; ?></td>
@@ -116,6 +117,13 @@
 																						</div>
 																						<div class="col">
 																							<select class="form-control rounded-0" id="app_group">
+																								<?php
+																								$showgroup = mysqli_query($con, "SELECT * FROM radusergroup WHERE username = '$show_username'");
+																								$showG = mysqli_fetch_assoc($showgroup);
+																								if ($showG) {
+																								 ?>
+																									<option value="<?php echo $showG['groupname'] ?>"><?php echo $showG['groupname'] ?></option>
+																								<?php	}	?>
 																								<option value="Defualt">Defualt</option>
 																								<?php
 																								$loopgroup = mysqli_query($con, "SELECT DISTINCT groupname FROM radgroupcheck");
@@ -190,6 +198,11 @@
 																						</div>
 																						<div class="col">
 																							<select class="form-control rounded-0" name="up_group">
+																								<?php
+																								if ($showG) {
+																								 ?>
+																									<option value="<?php echo $showG['groupname'] ?>"><?php echo $showG['groupname'] ?></option>
+																								<?php	}	?>
 																								<option value="Defualt">Defualt</option>
 																								<?php
 																								$loopgroup = mysqli_query($con, "SELECT DISTINCT groupname FROM radgroupcheck");
