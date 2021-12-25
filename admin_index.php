@@ -76,7 +76,7 @@
 																<td><?php echo $show['username']; ?></td>
 																<td><?php echo $show['m_name']; ?></td>
 																<td><?php echo $show['m_lastname']; ?></td>
-																<td><button class="btn btn-sm btn-block btn-info font-weight-bold" type="button" data-toggle="modal" data-target="#approve<?php echo $show['id'] ?>">Approve</button></td>
+																<td><button class="btn btn-sm btn-block btn-dark font-weight-bold" type="button" data-toggle="modal" data-target="#approve<?php echo $show['id'] ?>">Approve</button></td>
 																<td><div class="btn-group btn-group-sm btn-block">
 																	<button class="btn btn-sm btn-warning font-weight-bold" type="button" data-toggle="modal" data-target="#edit<?php echo $show['id'] ?>">Edit</button>
 																	<button class="btn btn-sm btn-secondary font-weight-bold" type="button" data-toggle="modal" data-target="#del<?php echo $show['id'] ?>">Delete</button>

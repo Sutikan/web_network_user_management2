@@ -30,16 +30,21 @@
 	</div>
 
 	<div class="modal fade" id="logout">
-		<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
 			<div class="modal-content">
 				<form method="post">
-					<div class="modal-body">
-						<button class="close" data-dismiss="modal" type="button">&times;</button><br>
+					<div class="modal-body text-center">
 						<div class="m-2">
-							<span>Are you sure, you want to log out?</span>
-							<div class="text-right mt-3">
-								<button class="btn btn-sm btn-light" data-dismiss="modal" type="button">Cancel</button>
-								<button class="btn btn-sm btn-danger font-weight-bold" type="submit" name="log_out">Log out</button>
+							<h5 class="text-center">Log out</h5>
+							<span class="card-text">Do you want to Logout?</span>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col" style="padding-right: 0;">
+								<button class="btn btn-sm btn-danger btn-block font-weight-bold" type="submit" name="log_out">Yes, log out</button>
+							</div>
+							<div class="col" style="padding-left: 1px;">
+								<button class="btn btn-sm btn-light btn-block" type="button" data-dismiss="modal">Cancel</button>
 							</div>
 						</div>
 					</div>
